@@ -19,12 +19,17 @@ const business = {
 const businesses = [business, business, business, business, business, business]
 
 class App extends React.Component {
+
+  searchYelp(term, location, sortBy) {
+    // eslint-disable-next-line no-template-curly-in-string
+    console.log(term, location, sortBy);
+  }
+
   render() {
     return (
       <div className="App">
         <h1>ravenous</h1>
-        <SearchBar />
-        <BusinessList />
+        <SearchBar searchYelp={this.searchYelp} />
         <BusinessList businesses={businesses} />
       </div>
     );
